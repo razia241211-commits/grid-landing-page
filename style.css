@@ -1,0 +1,371 @@
+
+/* ===== General Settings ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+}
+
+
+/* ===== Main Container ===== */
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+
+    background-color: #2d55f5;
+    color: white;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ===== Header ===== */
+
+.header {
+    height: 65px;
+    padding: 0 45px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 13px;
+}
+
+.logo-dot {
+    width: 9px;
+    height: 9px;
+
+    background-color: white;
+    border-radius: 50%;
+}
+
+.menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+}
+
+.menu img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+
+/* ===== Main Content Layout ===== */
+
+.content {
+    display: grid;
+    grid-template-columns: 45% 55%;
+
+    min-height: 590px;
+}
+
+
+/* ===== Introduction Section ===== */
+
+.intro {
+    display: flex;
+    align-items: center;
+
+    padding: 50px 45px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.intro-content {
+    width: 100%;
+    max-width: 450px;
+}
+
+.intro h1 {
+    font-size: clamp(40px, 4vw, 58px);
+    font-weight: 400;
+    line-height: 0.98;
+
+    margin-bottom: 40px;
+}
+
+.intro p {
+    max-width: 400px;
+
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ===== Statistics Grid ===== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+
+/* ===== Individual Cards ===== */
+
+.stat-card {
+    min-width: 0;
+    min-height: 295px;
+
+    padding: 32px 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Vertical borders between the two columns */
+
+.stat-card:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Remove bottom borders from the last row */
+
+.stat-card:nth-child(3),
+.stat-card:nth-child(4) {
+    border-bottom: none;
+}
+
+
+/* ===== Icons and Numbers ===== */
+
+.stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.number {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+
+/* ===== Card Descriptions ===== */
+
+.stat-text h2 {
+    font-size: 16px;
+    font-weight: 400;
+
+    margin-bottom: 5px;
+}
+
+.stat-text p {
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ===== Footer ===== */
+
+.footer {
+    min-height: 65px;
+    padding: 20px 45px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.attribution{
+    display: flex;
+    justify-content: center;
+}
+.attribution a{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ===================================
+   TABLET RESPONSIVE DESIGN
+   Screens 768px and below
+=================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+        align-items: flex-start;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .header {
+        padding: 0 25px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .intro {
+        min-height: 350px;
+        padding: 45px 30px;
+
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .intro h1 {
+        font-size: clamp(36px, 6vw, 48px);
+        line-height: 1.05;
+        margin-bottom: 25px;
+    }
+
+    .intro p {
+        font-size: 15px;
+    }
+
+    .stat-card {
+        min-height: 230px;
+        padding: 25px 20px;
+    }
+
+    .number {
+        font-size: 28px;
+    }
+
+    .stat-text h2 {
+        font-size: 15px;
+    }
+
+    .stat-text p {
+        font-size: 12px;
+    }
+
+    .footer {
+        padding: 20px 25px;
+    }
+}
+
+
+/* ===================================
+   MOBILE RESPONSIVE DESIGN
+   Screens 480px and below
+=================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .header {
+        height: 58px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 12px;
+    }
+
+    .intro {
+        min-height: auto;
+        padding: 40px 20px;
+    }
+
+    .intro h1 {
+        font-size: clamp(32px, 8vw, 40px);
+        line-height: 1.05;
+        margin-bottom: 25px;
+    }
+
+    .intro p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    /* One card per row on small screens */
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        min-height: 180px;
+        padding: 25px 20px;
+
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    /* Every card except the last has a bottom border */
+
+    .stat-card:nth-child(odd) {
+        border-right: none;
+    }
+
+    .stat-card:nth-child(3) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .stat-card:nth-child(4) {
+        border-bottom: none;
+    }
+
+    .number {
+        font-size: 26px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        padding: 20px;
+        font-size: 12px;
+    }
+}
